@@ -149,7 +149,8 @@ public class PyroscopeAgent {
              * Secures the default profile export transport with a caller-supplied socket factory and
              * the trust manager backing it. Ignored, with a warning, when a custom
              * {@link #setExporter(Exporter) exporter} or {@link #setScheduler(ProfilingScheduler) scheduler}
-             * is supplied.
+             * is supplied. For client certificates that rotate at runtime, see
+             * {@link io.pyroscope.javaagent.api.DynamicTlsContext}.
              */
             public Builder setSslSocketFactory(@NotNull SSLSocketFactory sslSocketFactory, @NotNull X509TrustManager trustManager) {
                 checkNotNull(sslSocketFactory, "sslSocketFactory");
